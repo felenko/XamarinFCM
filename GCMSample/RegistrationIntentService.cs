@@ -43,8 +43,9 @@ namespace GCMSample
 		}
 
 		void SendRegistrationToServer(string token) {
-			// Add custom implementation, as needed.
-		}
+            // Add custom implementation, as needed.
+		    TokenReceived(this, token);
+        }
 
 		void SubscribeTopics(string token) {
 			foreach (var topic in TOPICS) {
@@ -52,6 +53,9 @@ namespace GCMSample
 				pubSub.Subscribe(token, "/topics/" + topic, null);
 			}
 		}
-	}
+
+
+	    public static EventHandler<string> TokenReceived;
+    }
 }
 

@@ -164,6 +164,12 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Users\Kostiantyn\Documents\Visual Studio 2017\Projects\XFAppDemo\Backendless Standard %28VS2017%29\Backendless Standard %28VS2017%29.csproj">
+      <Project>{37B17435-BF3E-4030-8BE9-4AD12EE4B5F4}</Project>
+      <Name>Backendless Standard %28VS2017%29</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
