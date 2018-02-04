@@ -15,7 +15,7 @@ namespace GCMSample
 	public class RegistrationIntentService : IntentService
 	{
 		const string TAG = "RegIntentService";
-		static readonly string[] TOPICS = {"global"};
+		static readonly string[] TOPICS = {"global","default","Default"};
 
 		public RegistrationIntentService() : base (TAG) {
 		}
@@ -31,7 +31,7 @@ namespace GCMSample
 						GoogleCloudMessaging.InstanceIdScope, null);
 					Log.Info(TAG, "GCM Registration Token: " + token);
 					SendRegistrationToServer(token);
-					SubscribeTopics(token);
+					//SubscribeTopics(token);
 					sharedPreferences.Edit().PutBoolean(QuickstartPreferences.SENT_TOKEN_TO_SERVER, true).Apply();
 				}
 			} catch (Exception e) {
@@ -42,9 +42,10 @@ namespace GCMSample
 			LocalBroadcastManager.GetInstance(this).SendBroadcast(registrationComplete);
 		}
 
-		void SendRegistrationToServer(string token) {
+	    public static EventHandler<string> TokenReceived;
+        void SendRegistrationToServer(string token) {
             // Add custom implementation, as needed.
-		    TokenReceived(this, token);
+            TokenReceived?.Invoke(this, token);
         }
 
 		void SubscribeTopics(string token) {
@@ -55,7 +56,7 @@ namespace GCMSample
 		}
 
 
-	    public static EventHandler<string> TokenReceived;
+	    
     }
 }
 

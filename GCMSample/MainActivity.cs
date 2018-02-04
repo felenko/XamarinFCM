@@ -44,7 +44,7 @@ namespace GCMSample
 
 		    RegistrationIntentService.TokenReceived += (sender, token) =>
 		    {
-		        RegisterDevice(token);
+		        RegisterDeviceInBackendless(token);
 		    };
 
             if (CheckPlayServices ()) {
@@ -57,20 +57,18 @@ namespace GCMSample
         
         private void InitApi()
         {
-            String appId = "A3D96FA2-7314-2543-FF66-0B60549D7300";
-            String secretKey = "97ABCC00-2E19-E4F9-FFCA-B3721842F100";
+            String appId = "9BA31C05-1D39-4DE3-FF50-38EED1144E00";
+            String secretKey = "2BC1BACF-E7BC-7EDD-FF99-41B49CF02700";
             Backendless.URL = "http://api.backendless.com";
             try
             {
                 Backendless.InitApp(appId, secretKey);
-
-
+                
             }
             catch (Exception e)
             {
-
+                Console.Write($"Error {e.Message}");
             }
-
         }
 
         private void errorHandler(BackendlessFault fault)
@@ -79,11 +77,9 @@ namespace GCMSample
         }
 
 
-        public void RegisterDevice(string token)
+        public void RegisterDeviceInBackendless(string token)
         {
-            // Server API Key AIzaSyCasyCtHfgsdccFss90nt06-LnJ6y_4D3g
             String id = null;
-
             id = Build.Serial;
             var OS_VERSION = (Build.VERSION.SdkInt).ToString();
             var OS = "ANDROID";
@@ -93,13 +89,7 @@ namespace GCMSample
             }
             catch (Exception e)
             {
-                //StringBuilder builder = new StringBuilder();
-                //builder.append(System.getProperty("os.name"));
-                //builder.append(System.getProperty("os.arch"));
-                //builder.append(System.getProperty("os.version"));
-                //builder.append(System.getProperty("user.name"));
-                //builder.append(System.getProperty("java.home"));
-                //id = UUID.nameUUIDFromBytes(builder.toString().getBytes()).toString();
+               Console.Write($"Error {e.Message}");
             }
 
             var DEVICE_ID = id;
@@ -107,7 +97,7 @@ namespace GCMSample
             var deviceReg = new DeviceRegistration();
             deviceReg.Os = OS;
             deviceReg.OsVersion = OS_VERSION;
-            deviceReg.Expiration = DateTime.Now.AddDays(10);
+            deviceReg.Expiration = DateTime.Now.AddHours(3);
             deviceReg.DeviceId = DEVICE_ID;
             deviceReg.DeviceToken = token;
             Backendless.Messaging.DeviceRegistration = deviceReg;
