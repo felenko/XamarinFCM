@@ -165,8 +165,8 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Users\Kostiantyn\Documents\Visual Studio 2017\Projects\XFAppDemo\Backendless Standard %28VS2017%29\Backendless Standard %28VS2017%29.csproj">
-      <Project>{37B17435-BF3E-4030-8BE9-4AD12EE4B5F4}</Project>
+    <ProjectReference Include="..\Backendless Standard %28VS2017%29\Backendless Standard %28VS2017%29.csproj">
+      <Project>{21f2bd1e-5f0c-4fb4-8d46-edb2ea9804d2}</Project>
       <Name>Backendless Standard %28VS2017%29</Name>
     </ProjectReference>
   </ItemGroup>
