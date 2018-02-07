@@ -57,8 +57,8 @@ namespace GCMSample
         
         private void InitApi()
         {
-            String appId = "9BA31C05-1D39-4DE3-FF50-38EED1144E00";
-            String secretKey = "2BC1BACF-E7BC-7EDD-FF99-41B49CF02700";
+            String appId = "A3D96FA2-7314-2543-FF66-0B60549D7300";
+            String secretKey = "C52669F7-B0BC-4D8F-FF19-D120A11B7500";
             Backendless.URL = "http://api.backendless.com";
             try
             {
@@ -85,7 +85,7 @@ namespace GCMSample
             var OS = "ANDROID";
             try
             {
-                id = UUID.RandomUUID().ToString();
+                id = "504de480-1bec-4aed-bbf6-26e20a2128b8"; //UUID.RandomUUID().ToString();
             }
             catch (Exception e)
             {

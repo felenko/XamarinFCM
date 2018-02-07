@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GcmSender", "GcmSender\GcmS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backendless Standard (VS2017)", "Backendless Standard (VS2017)\Backendless Standard (VS2017).csproj", "{21F2BD1E-5F0C-4FB4-8D46-EDB2EA9804D2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetConsoleSender", "NetConsoleSender\NetConsoleSender.csproj", "{084E8031-ADDA-449D-8486-D7023405F29C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +30,10 @@ Global
 		{21F2BD1E-5F0C-4FB4-8D46-EDB2EA9804D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21F2BD1E-5F0C-4FB4-8D46-EDB2EA9804D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21F2BD1E-5F0C-4FB4-8D46-EDB2EA9804D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{084E8031-ADDA-449D-8486-D7023405F29C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{084E8031-ADDA-449D-8486-D7023405F29C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{084E8031-ADDA-449D-8486-D7023405F29C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{084E8031-ADDA-449D-8486-D7023405F29C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
